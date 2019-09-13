@@ -1,9 +1,16 @@
 import React from 'react';
-import {} from 'react-bootstrap';
+import LoginForm from 'components/LoginPage';
+import ChatPage from 'components/ChatPage';
+import { useSelector } from 'react-redux';
 
-const App = () => {
+const App: React.FC = () => {
+    const isLogged = useSelector((state: any) => {
+        return state.account.isLogged;
+    });
     return (
-        <h1>test</h1>
+        <React.Fragment>
+            {isLogged ? (<ChatPage />) : (<LoginForm />)}
+        </React.Fragment>
     );
 };
 
