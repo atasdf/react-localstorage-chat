@@ -1,11 +1,31 @@
 import React from 'react';
+import SendBox from 'components/SendBox';
+import ChatHistory from 'components/ChatHistory'
+import { Col, Row, Navbar } from 'react-bootstrap';
+import logo from 'assets/logo192.png';
 
 const ChatPage: React.FC = () => {
-    const username = sessionStorage.getItem('username');
     return (
-        <h1>
-            Hello {username}! U are logged! 
-        </h1>
+        <React.Fragment>
+            <Row className='p-0 m-0'>
+                <Col className='bg-light p-0 m-0'>
+                    <Navbar bg="dark">
+                        <Navbar.Brand href="/">
+                        <img
+                            src={logo}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                        </Navbar.Brand>
+                        <h3 className='text-white'>react chat</h3>
+                    </Navbar>
+                    <ChatHistory />
+                    <SendBox />
+                </Col>
+            </Row>
+        </React.Fragment>
     );
 };
 

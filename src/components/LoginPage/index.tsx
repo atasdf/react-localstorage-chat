@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from 'modules/login/actions/login';
+import { login } from 'modules/chat/actions/login';
+import uuid from 'uuid'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const LoginForm: React.FC = () => {
@@ -11,7 +12,8 @@ const LoginForm: React.FC = () => {
     };
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        dispatch(login(username.value));
+        const uid = uuid()
+        dispatch(login(username.value, uid));
     };
     return (
         <Container  style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>

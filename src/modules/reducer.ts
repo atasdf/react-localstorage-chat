@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
-import account, { State as AccountState } from 'modules/login/reducer';
+import login, { State as AccountState } from 'modules/chat/reducers/login';
+import messages, { State as MessageState } from 'modules/chat/reducers/message';
 
 export type RootState = {
-    account: AccountState
+    login: AccountState
+    messages: MessageState;
 }
 
 export default combineReducers<RootState>({
-    account
+    login,
+    messages
 })

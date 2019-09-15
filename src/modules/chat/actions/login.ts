@@ -5,6 +5,13 @@ export const setLogin = (name: string) => {
     };
 };
 
+export const setUserId = (id: string) => {
+    return {
+        type: 'USER_ID',
+        payload: id
+    };
+};
+
 export const setLogged = (loading: boolean) => {
     return {
         type: 'USER_LOGGED',
@@ -12,11 +19,10 @@ export const setLogged = (loading: boolean) => {
     };
 };
 
-export const login = (username: any) => {
+export const login = (username: string, uid: string) => {
     return (dispatch: any) => {
-        sessionStorage.setItem('username', username);
-        const login: any = sessionStorage.getItem('username');
-        dispatch(setLogin(login));
+        dispatch(setLogin(username));
+        dispatch(setUserId(uid));
         dispatch(setLogged(true));
     }
 }

@@ -3,19 +3,30 @@ import { AnyAction } from 'redux';
 export type State = {
     username: string;
     isLogged: boolean;
+    id: string;
+
 };
 
 export const initialState: State = {
     username: '',
     isLogged: false,
+    id: '',
+
 };
 
-const account = (state = initialState, action: AnyAction) => {
+const login = (state = initialState, action: AnyAction) => {
     switch (action.type) {
         case 'USER_LOGIN':
             return {
                 ...state,
-                username: action.payload
+                username: action.payload,
+                id: action.payload
+            };
+
+        case 'USER_ID':
+            return {
+                ...state,
+                id: action.payload
             };
         
         case 'USER_LOGGED':
@@ -24,9 +35,14 @@ const account = (state = initialState, action: AnyAction) => {
                 isLogged: action.payload
             };
 
+        case 'SEND_MESSAGE':
+            return {
+                ...state,
+            };
+
         default:
             return state
     };
 };
 
-export default account;
+export default login;

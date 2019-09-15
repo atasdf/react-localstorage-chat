@@ -10,6 +10,11 @@ import 'styles/index.css';
 const store = configureStore();
 const TARGET_ROOT = document.getElementById('root');
 
+store.subscribe(() => {
+    const state = store.getState();
+    localStorage.setItem('message', JSON.stringify(state.messages));
+});
+
 render(
     <Provider store={store}>
         <App/>
