@@ -1,6 +1,7 @@
 import React from 'react';
 import SendBox from 'components/SendBox';
-import ChatHistory from 'components/ChatHistory'
+import ChatHistory from 'components/MessagesList';
+import Manage from 'components/Manage';
 import { Col, Row, Navbar } from 'react-bootstrap';
 import logo from 'assets/logo192.png';
 
@@ -20,6 +21,7 @@ const ChatPage: React.FC = () => {
                         />
                         </Navbar.Brand>
                         <h3 className='text-white'>react chat</h3>
+                        <Manage />
                     </Navbar>
                     <ChatHistory />
                     <SendBox />

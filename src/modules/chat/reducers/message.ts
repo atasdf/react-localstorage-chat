@@ -16,6 +16,12 @@ const account = (state = initialState, action: AnyAction) => {
                 message: action.payload,
             };
 
+        case 'LOAD_MESSAGE':
+            return {
+                ...state,
+                message: action.payload,
+            };
+
         default:
             return state
     };
