@@ -5,7 +5,6 @@ import { cleanState } from 'modules/chat/actions/message';
 const Manage: React.FC = () => {
     const dispatch = useDispatch();
     const resetData = () => { 
-        window.localStorage.clear();
         dispatch(cleanState());
     }
 

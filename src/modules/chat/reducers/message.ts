@@ -13,10 +13,13 @@ const account = (state = initialState, action: AnyAction) => {
         case 'SEND_MESSAGE':
             return {
                 ...state,
-                message: action.payload,
+                message: [
+                    ...state.message,
+                    action.payload
+                ]
             };
 
-        case 'LOAD_MESSAGE':
+        case 'LOAD_STORAGE_MESSAGES':
             return {
                 ...state,
                 message: action.payload,
