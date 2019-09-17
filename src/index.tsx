@@ -10,9 +10,16 @@ import 'styles/index.css';
 const store = configureStore();
 const TARGET_ROOT = document.getElementById('root');
 
-// store.subscribe(() => {
+store.subscribe(() => {
+    const state = store.getState();
+    localStorage.setItem('message', JSON.stringify(state.messages.message));
+});
+
+// window.addEventListener('storage', e => {
 //     const state = store.getState();
-//     localStorage.setItem('message', JSON.stringify(state.messages));
+//     const msg = state.messages.message
+//     localStorage.setItem('message', JSON.stringify(msg));
+//     console.log('storage update')
 // });
 
 render(

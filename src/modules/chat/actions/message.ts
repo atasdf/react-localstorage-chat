@@ -43,7 +43,6 @@ export const sendMessage = (msg: string, user: string, uid: string) => {
             id: uid
         };
         chatHistory.push(data);
-        localStorage.setItem('message', JSON.stringify(chatHistory));
         dispatch(message(chatHistory));
     }
 }

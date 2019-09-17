@@ -22,12 +22,20 @@ const LoginForm: React.FC = () => {
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Ваше имя</Form.Label>
-                            <Form.Control type="text" value={username.value} onChange={handleChange} placeholder="Введите ваше имя или никнейм" />
+                            <Form.Control type="text" 
+                                value={username.value} 
+                                onChange={handleChange} 
+                                placeholder="Введите ваше имя или никнейм" />
                             <Form.Text className="text-muted">
                                 Ваши данные сохраняются только пока открыта вкладка браузера
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit" value="Submit" >
+                        <Button 
+                            variant="primary" 
+                            disabled={0 === username.value.length} 
+                            type="submit" 
+                            value="Submit" 
+                        >
                             Войти в чат
                         </Button>
                     </Form>

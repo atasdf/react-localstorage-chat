@@ -30,7 +30,14 @@ const SendBox: React.FC = () => {
                             onChange={handleChange}
                         />
                         <InputGroup.Append>
-                            <Button variant="outline-primary" type="submit" value="Submit">Отправить</Button>
+                            <Button 
+                                disabled={0 === message.value.length}
+                                variant="outline-primary" 
+                                type="submit" 
+                                value="Submit"
+                            >
+                                Отправить
+                            </Button>
                         </InputGroup.Append>
                     </InputGroup>
                 </Row>

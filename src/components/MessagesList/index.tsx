@@ -7,7 +7,7 @@ import Styled from 'styled-components';
 const ChatHistory: React.FC = () => {
 
     const MessagesStyle = Styled.div`
-        height: 700px;
+        height: 800px;
         overflow-x: hidden;
         overflow-y: scroll;
     `;
