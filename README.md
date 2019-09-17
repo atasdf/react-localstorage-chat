@@ -1,4 +1,4 @@
-demo - [GitHub](https://react-localstorage-chat.pendalph.now.sh/)
+[demo](https://react-localstorage-chat.pendalph.now.sh/)
 
 
 ## install
